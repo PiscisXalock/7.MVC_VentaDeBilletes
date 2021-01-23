@@ -10,6 +10,7 @@ package Modelo;
  * @author Usuario
  */
 public class Billete {
+
     private String fechaVuelo;
     private int cantidad;
     private double precio;
@@ -38,15 +39,17 @@ public class Billete {
     public void setFechaVuelo(String fechaVuelo) {
         this.fechaVuelo = fechaVuelo;
     }
-    
-    public double getImporte(){
-        mes = Integer.parseInt(this.fechaVuelo.substring(5,7));
-        if(mes >= 5 && mes <= 9){
+
+    public double getImporte() {
+        mes = Integer.parseInt(this.fechaVuelo.substring(5, 7));
+        if (mes >= 5 && mes <= 9) {
             precio = 150.0;
-        }else{
+        } else {
             precio = 90.0;
         }
         double precioSinIva = precio * cantidad;
-        return precioSinIva * 1.21;
+        precioSinIva = precioSinIva * 1.21;
+        return Math.round(precioSinIva);
     }
+    
 }

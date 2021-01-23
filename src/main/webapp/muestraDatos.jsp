@@ -15,9 +15,9 @@
     <body>
         <h1>Aerolíneas Bosco</h1>
         <hr>
-        <% Billete billete = (Billete) request.getAttribute("billete"); %>
-        <p>Número de billetes: <%= billete.getCantidad() %>.</p>
-        <p>Fecha vuelo; <%= billete.getFechaVuelo() %>.</p>
-        <p>Importe de los billetes: <%= billete.getImporte() %>.</p>
+        <% request.getAttribute("billete"); %>
+        <p>Número de billetes: ${ billete.cantidad }.</p>
+        <p>Fecha vuelo: ${ billete.fechaVuelo }.</p>
+        <p>Importe de los billetes: ${ billete.importe }€.</p>
     </body>
 </html>
